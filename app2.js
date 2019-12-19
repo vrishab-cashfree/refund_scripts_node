@@ -92,7 +92,6 @@ const processRefundChunks = async function(refundChunks){
             //assumption is that all 30 request get responses before the minute.
             callRefunds(refundChunks[i]);
             await sleep(60 * 1000);
-            return;
         }
     }
     catch(err){
