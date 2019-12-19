@@ -1,0 +1,14 @@
+{
+  "name": "node_refund_csv",
+  "version": "1.0.0",
+  "description": "cashfree script to read from csv and call refund api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vrishab@cashfree.com",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

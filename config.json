@@ -1,0 +1,10 @@
+{
+    "appId":"app_id",
+    "secretKey":"secret_key",
+    "env": "test",
+    "url":{
+        "test": "https://test.cashfree.com/api/v1/",
+        "prod": "https://api.cashfree.com/api/v1/"
+    },
+    "file":"/path/to/file.csv"
+}
