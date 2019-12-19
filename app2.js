@@ -66,10 +66,7 @@ const writeData = async function(refund){
 const makeRefundCall = async function(refund){
     try{
         const form = {appId,secretKey, ...refund};
-        console.log('form', form);
         const r = await postAsync({url,headers, form, family: 4,});
-        console.log(r);
-        console.log(r.body);
         const {status, message, reason} = JSON.parse(r.body); 
         if(status === 'ERROR') throw {name: 'refundError', message: 'err returned by server:', reason}
     }
@@ -88,8 +85,6 @@ const callRefunds = function(refunds){
 const processRefundChunks = async function(refundChunks){
     try{
         for(let i = 0; i< refundChunks.length; i++){
-            //await Promise.all(callRefunds(refundChunks[i]));
-            //assumption is that all 30 request get responses before the minute.
             callRefunds(refundChunks[i]);
             await sleep(60 * 1000);
         }
